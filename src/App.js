@@ -1,9 +1,11 @@
+import Header from './Header/Header';
 
 export default function App() {
   return (
-    <div className='Application'>
-      <h1>Aye Captain! 🫡</h1>
-      <h2>Lets create something!</h2>
+    <div className='App'>
+      <Header />
+      <hr />
+      <h2>Nothing to do buddy. Sleep!!</h2>
     </div>
   );
 }
