@@ -1,11 +1,12 @@
-import Header from './Header/Header';
+import Header from './component/Header/Header';
+import ToDoList from './component/ToDoList';
 
 export default function App() {
   return (
     <div className='App'>
       <Header />
       <hr />
-      <h2>Nothing to do buddy. Sleep!!</h2>
+      <ToDoList />
     </div>
   );
 }
