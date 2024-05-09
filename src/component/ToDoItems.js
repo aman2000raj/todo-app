@@ -3,7 +3,7 @@ import React from 'react';
 function ToDoItems({ Item }) {
   return (
     <li>
-      <span>{Item}</span>
+      <span>{Item} </span>
       <input type='checkbox'></input>
     </li>
   );
