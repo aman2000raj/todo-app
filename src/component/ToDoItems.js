@@ -1,14 +1,12 @@
 import React from 'react';
 
 function ToDoItems({ Item, completeItem }) {
+  const { value, isCompleted } = Item;
   return (
     <li onClick={completeItem}>
-      <span
-        style={{ textDecoration: Item.isCompleted ? 'line-through' : 'none' }}
-      >
-        {Item.value}
+      <span style={{ textDecoration: isCompleted ? 'line-through' : 'none' }}>
+        {value}
       </span>
-      <input type='checkbox'></input>
     </li>
   );
 }
