@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ToDoItems from './ToDoItems';
 
 function ToDoList() {
-  const Items = [
+  const initialItems = [
     'Read SpringBoot',
     'Complete assignment',
     'Prepare breakfast',
@@ -10,12 +10,28 @@ function ToDoList() {
     'Take a shower',
   ];
 
+  const [items, setItems] = useState(initialItems);
+
+  const handleEmptyItem = () => {
+    setItems([]);
+  };
+
   return (
-    <ul>
-      {Items.map((Item, idx) => (
-        <ToDoItems key={idx} Item={Item} />
-      ))}
-    </ul>
+    <>
+      <ul>
+        {items.length === 0 && <li>Nothing to do buddy. Sleep!</li>}
+        {items.map((item, idx) => (
+          <ToDoItems key={idx} Item={item} />
+        ))}
+      </ul>
+      <button
+        type='button'
+        onClick={handleEmptyItem}
+        disabled={items.length === 0}
+      >
+        Empty
+      </button>
+    </>
   );
 }
 
