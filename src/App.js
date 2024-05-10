@@ -3,7 +3,7 @@ import ToDoList from './component/ToDoList';
 
 export default function App() {
   return (
-    <div className='App'>
+    <div>
       <Header />
       <hr />
       <ToDoList />
