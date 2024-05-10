@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ToDoItems from './ToDoItems';
+import ClearButton from './ClearButton';
 
 function ToDoList() {
   const initialItems = [
@@ -23,17 +24,6 @@ function ToDoList() {
     setItems(newItems);
   };
 
-  const clearCompleteTask = () => {
-    const newiIncompleteItems = items.filter((item) => !item.isCompleted);
-    setItems(newiIncompleteItems);
-  };
-
-  const handleEmptyItem = () => {
-    setItems([]);
-  };
-
-  const isAnyItemCompleted = items.some((item) => item.isCompleted);
-
   return (
     <>
       <ul>
@@ -46,13 +36,7 @@ function ToDoList() {
           />
         ))}
       </ul>
-      <button
-        type='button'
-        onClick={isAnyItemCompleted ? clearCompleteTask : handleEmptyItem}
-        disabled={items.length === 0}
-      >
-        Empty
-      </button>
+      <ClearButton items={items} setItems={setItems} />
     </>
   );
 }
